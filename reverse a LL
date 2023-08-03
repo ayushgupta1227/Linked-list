@@ -1,0 +1,12 @@
+    ListNode* reverseList(ListNode* head) {
+        ListNode* newHead=NULL;           the tc is : O(n) and sc is o(1)
+        while(head!=NULL){
+            ListNode* next= head->next;
+            head->next= newHead;
+            newHead= head;
+            head=next;
+
+        }
+        return newHead; // which is the dummy node
+    }
+};
