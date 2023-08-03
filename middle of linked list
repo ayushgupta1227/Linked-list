@@ -1,0 +1,13 @@
+// optimal approach which is slow and fast tortoise approach
+ListNode* middleNode(ListNode* head) {   // tc is o(N/2) and sc is o(1)
+        ListNode* slow =head;
+        ListNode* fast =head;
+        while(fast!=NULL && fast->next!=NULL){
+            slow=slow->next;
+            fast=fast->next->next;
+        }
+        return slow;
+    }
+};
+
+// in brute approach the for loop till n/2 is run where the time complexity was o(n)+ o(n/2) and the sc was o(1)
