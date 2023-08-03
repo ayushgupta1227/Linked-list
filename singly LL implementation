@@ -1,0 +1,15 @@
+Struct Node{
+int data;
+Node*next; // self referential structures
+Node(int x) // constructo
+{
+data=x;
+next=NULL;
+}
+}
+int main(){
+Node*head = newNode(10);
+head->next= ""(20);
+""= ""(30);
+return 0;
+}
