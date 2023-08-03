@@ -1,0 +1,17 @@
+ //optimal approach
+  ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {   // here tc is o(m)+ o(m-n)+ o(n)=o(2m) and sc is o(1)
+        if(headA== NULL || headB== NULL) return NULL;
+
+        ListNode *a = headA;
+        ListNode *b = headB;
+
+        while(a!=b){
+            a=a==NULL? headB: a->next;
+            b=b==NULL? headA: b->next;
+        }
+        return a;
+    }
+};
+
+// brute force approach
+hashing is used here where the tc is o(2m) and sc is o(n)
