@@ -1,0 +1,23 @@
+   // optimal here the tc is o(n1+n2) and sc is o(1)
+   here in place is taken as the bonds are broken in place only
+   ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        // iterative
+        if(list1==NULL)return list2; // edge cases
+        if(list2==NULL)return list1;
+        if(list1->val>list2->val) std::swap(list1,list2);
+        ListNode* res= list1;
+        while(list1!=NULL && list2!=NULL){
+            ListNode* tmp= NULL;
+            while(list1!=NULL && list1->val <= list2->val){
+                tmp=list1;
+                list1=list1->next;
+            }
+            tmp->next=list2;
+            std::swap(list1,list2);
+        }
+        return res;
+    }
+};
+
+// brute force approach here tc is o(n1+n2) and sc is (n1+n2)
+here external space is used by dummy duplicate nodes
